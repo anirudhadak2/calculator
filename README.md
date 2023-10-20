@@ -6,7 +6,11 @@ try this  on  jenknis node agent because  the 8080 port is alredy occupied to je
 # Download the buildx binary
 
 mkdir -p ~/.docker/cli-plugins
+
+
 curl -SL https://github.com/docker/buildx/releases/download/v0.6.3/buildx-v0.6.3.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+
+
 # Make it executable
 
 
