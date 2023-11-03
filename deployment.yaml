@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-deployment
+  labels:
+    app: calculator
+  namespace: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: calculator
+  template:
+    metadata:
+      labels:
+        app: calculator
+    spec:
+      nodeSelector:
+        env: development
+      containers:
+      - name: calculator-dev
+        image: chaitannyaa/calculator:latest
+        ports:
+        - containerPort: 80
+      dnsPolicy: ClusterFirst
